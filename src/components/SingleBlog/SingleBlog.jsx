@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import { faBookmark as faBookmarkSolid } from "@fortawesome/free-solid-svg-icons";
 
-const SingleBlog = ({ blog, addTime }) => {
+const SingleBlog = ({ blog, addTime, handleBookmark }) => {
   const { title, author, published, image, time } = blog;
   return (
     <div>
@@ -22,10 +22,7 @@ const SingleBlog = ({ blog, addTime }) => {
             </div>
             <div>
               <span className=" text-[#111111]/[0.6]">{time} min to read </span>
-              <FontAwesomeIcon
-                icon={faBookmark}
-                
-              ></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faBookmark} onClick={()=>handleBookmark(blog)}></FontAwesomeIcon>
             </div>
           </div>
           <h2 className="font-bold text-[2.5rem] my-5">{title}</h2>
