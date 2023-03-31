@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import { faBookmark as faBookmarkSolid } from "@fortawesome/free-solid-svg-icons";
 
 const SingleBlog = ({ blog, addTime, handleBookmark }) => {
   const { title, author, published, image, time } = blog;
+
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  const handleBookmarkClick = () => {
+    setIsBookmarked(true);
+    handleBookmark(blog);
+  };
+
   return (
     <div>
       <div className="card w-full bg-base-100 shadow-xl rounded-lg mb-6">
@@ -22,7 +30,16 @@ const SingleBlog = ({ blog, addTime, handleBookmark }) => {
             </div>
             <div>
               <span className=" text-[#111111]/[0.6]">{time} min to read </span>
-              <FontAwesomeIcon icon={faBookmark} onClick={()=>handleBookmark(blog)}></FontAwesomeIcon>
+              <span onClick={handleBookmarkClick}>
+                {isBookmarked ? (
+                  <FontAwesomeIcon
+                    icon={faBookmarkSolid}
+                    className="text-[#6047EC] cursor-pointer"
+                  />
+                ) : (
+                  <FontAwesomeIcon icon={faBookmark} className="text-[#6047EC] cursor-pointer" />
+                )}
+              </span>
             </div>
           </div>
           <h2 className="font-bold text-[2.5rem] my-5">{title}</h2>

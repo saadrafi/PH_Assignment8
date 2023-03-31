@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import SideCart from "../SideCart/SideCart";
 import SingleBlog from "../SingleBlog/SingleBlog";
+  import { ToastContainer, toast } from "react-toastify";
+  import "react-toastify/dist/ReactToastify.css";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -14,8 +16,14 @@ const Blog = () => {
   }, []);
 
   const handleBookmark = (blog) => {
+    if(bookmarks.includes(blog))
+    {
+      toast.error("Already Bookmarked");
+    }
+    else{
     const newBookmarks = [...bookmarks, blog];
     setBookmarks(newBookmarks);
+    }
   };
 
 
@@ -26,7 +34,9 @@ const Blog = () => {
 
   return (
     <div className="grid grid-cols-[2fr,1fr] gap-3 mt-5 ">
+
       <div>
+        <ToastContainer />
         {blogs.map((blog) => (
           <SingleBlog key={blog.id} blog={blog} addTime={timeToRead} handleBookmark={handleBookmark}></SingleBlog>
         ))}
