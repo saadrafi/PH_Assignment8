@@ -1,4 +1,5 @@
 import React from "react";
+import BookmarkDiv from "./BookmarkDiv";
 
 const SideCart = ({ time, bookmarks }) => {
   return (
@@ -10,9 +11,7 @@ const SideCart = ({ time, bookmarks }) => {
         <div className="p-4">
           <h3 className="text-[#111111] font-bold">Bookmarked Blogs:{bookmarks.length}</h3>
           {bookmarks.map((bookmark) => (
-            <div className="bg-[#ffffff] font-['Exo 2'] shadow-lg rounded font-semibold text-lg p-4 my-3 mb-4">
-              <p>{bookmark.title}</p>
-            </div>
+           <BookmarkDiv bookmark={bookmark} key={bookmark.id}></BookmarkDiv>
           ))}
         </div>
       </div>

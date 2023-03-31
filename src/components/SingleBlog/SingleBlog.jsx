@@ -28,8 +28,8 @@ const SingleBlog = ({ blog, addTime, handleBookmark }) => {
                 <p className="text-base font-semibold text-[#111111]/[0.6]">{published}</p>
               </div>
             </div>
-            <div>
-              <span className=" text-[#111111]/[0.6]">{time} min to read </span>
+            <div className="lg:flex gap-1 flex flex-col flex-nowrap">
+              <span className=" text-[#111111]/[0.6]">{time} min read </span>
               <span onClick={handleBookmarkClick}>
                 {isBookmarked ? (
                   <FontAwesomeIcon

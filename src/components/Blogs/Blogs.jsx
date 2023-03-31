@@ -4,7 +4,7 @@ import SingleBlog from "../SingleBlog/SingleBlog";
   import { ToastContainer, toast } from "react-toastify";
   import "react-toastify/dist/ReactToastify.css";
 
-const Blog = () => {
+const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [time, setTime] = useState(0);
   const [bookmarks, setBookmarks] = useState([]);
@@ -33,7 +33,7 @@ const Blog = () => {
    };
 
   return (
-    <div className="grid grid-cols-[2fr,1fr] gap-3 mt-5 ">
+    <div className="grid grid-cols-1 lg:grid-cols-[2fr,1fr] gap-3 mt-5 ">
 
       <div>
         <ToastContainer />
@@ -48,4 +48,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Blogs;
