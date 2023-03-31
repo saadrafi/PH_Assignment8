@@ -1,10 +1,10 @@
 import React from "react";
 
-const SideCart = () => {
+const SideCart = ({time}) => {
   return (
     <div className="sticky top-0">
       <div className="bg-[#6047EC]/[0.1] border border-solid border-[#6047EC] rounded">
-        <h3 className="text-center text-[#6047EC] p-6">Spent Time on Read:100</h3>
+        <h3 className="text-center text-[#6047EC] p-6">Spent Time on Read:{time}</h3>
       </div>
       <div className="bg-[#111111]/[0.05] mt-5">
         <div className="p-4">
