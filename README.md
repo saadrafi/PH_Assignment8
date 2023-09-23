@@ -1,6 +1,12 @@
-# knowledge Cafe
+# Knowledgepedia
 
-### Private Repo Link
-Click Here to create [private repo](https://classroom.github.com/a/gybMc88_)
+### Live link:
+https://dulcet-sundae-f0dc3c.netlify.app/
 
-Private Repo link: [https://classroom.github.com/a/gybMc88_](https://classroom.github.com/a/gybMc88_)
+## Tech Stack
+- HTML5
+- CSS3
+- JavaScript
+- TailwindCSS
+- React
+- Vite
